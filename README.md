@@ -1,2 +1,2 @@
 # TraderReport
-TraderReport: F# async replay, C# fuzz buzz service interop, write CSV.
+TraderReport: F# async timer, C# fuzz buzz service interop, write CSV, logger.
