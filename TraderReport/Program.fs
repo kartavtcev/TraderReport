@@ -35,7 +35,7 @@ let main argv =
                         TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time"))
 
                     let! trades = service.GetTradesAsync dateTimeNow.Date |> Async.AwaitTask // todo: add timeout = 1 minute to cancel: fssnip.net/hx
-
+                    // todo: use AsyncSeq to skip Async.AwaitTask; single pipline
                     trades
                     |> Seq.collect ( fun x -> x.Periods )
                     |> Seq.groupBy ( fun x -> x.Period )
